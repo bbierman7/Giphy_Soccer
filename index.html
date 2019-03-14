@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/images/style.css">
 
     <title>Soccer!</title>
 </head>
 
 <body>
 
+        <h1>Futbol!</h1>
         <button data-soccer="world cup">World Cup</button>
         <button data-soccer="ronaldinho">Ronaldinho</button>
         <button data-soccer="messi">Messi</button>
@@ -23,18 +24,22 @@
         <button data-soccer="bicycle kick">Bicycle kick</button>
         <button data-soccer="elastico">Elastico</button>
 
-        <div id="soccer-gifs-appear-here"></div>
+        <!--Rendered buttons will be added here-->
+        <div id="buttons-view"></div>
         
         <!--Form to type in soccer search topic-->
-        <!-- <form id="soccer-form">
-        <input id="add-soccer" type="submit" value="Type in anyone/anything about soccer for a new GIF!">
-        </form> -->
+        <form id="soccer-form">    
+            <label for="soccer-input"></label>
+            <input type="text" id="soccer-input">
+            <br>
+
+        <!--Click here for new soccer gifs to be added-->
+        <input id="add-soccer" type="submit" value="Type in your favorite soccer topic!">
+        </form>
 
 
-        <!-- <label for="soccer-input"></label>
-        <input type="text" id="soccer-input">
-        <br> -->
-
+        <!--Place where gifs will be dumped-->
+        <div id="soccer-gifs-appear-here"></div>
 
 
 

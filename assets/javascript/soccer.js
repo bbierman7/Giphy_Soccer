@@ -7,19 +7,19 @@ $(document).ready(function(){
 //  1. Before you can make any part of our site work, you need to create an array of strings, each one related to a topic that interests you. Save it to a variable called `topics`.
 //    * We chose animals for our theme, but you can make a list to your own liking.
 
-// var soccer = ["world cup", "ronaldinho", "messi", "cristiano ronaldo", "wayne rooney", "steven gerrard", "f.c. barcalona",
-// "manchester united", "sir alex ferguson", "bicycle kick", "elastico"]
 
 // 2. Your app should take the topics in this array and create buttons in your HTML.
 //    * Try using a loop that appends a button for each string in the array.
 
+var soccer = ["world cup", "ronaldinho", "messi", "cristiano ronaldo", "wayne rooney", "steven gerrard", "f.c. barcalona",
+"manchester united", "bicycle kick", "elastico"]
 
 
 // 3. When the user clicks on a button, the page should grab 10 static, non-animated gif images from the GIPHY API and place them on the page.
 
 $("button").on("click", function(){
-
-    var soccer = $(this).attr("data-soccer");
+   
+    soccer = $(this).attr("data-soccer");
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + soccer + "&api_key=hEzp6VLdrLsUVR0RNuEqLStvSJfuIJEL&limit=10";
 
@@ -35,9 +35,14 @@ $.ajax({
 
         console.log(response);
         
+        
+        //removes duplicate buttons with each click
+        $("#soccer-gifs-appear-here").empty();
+
         var results = response.data;
 
-        for (var i = 0; i < results.length; i++) {
+        //Loops through arrays and appends rating and gif
+        for (var i = 0; i < soccer.length; i++) {
 
             var soccerDiv = $("<div>");
 
@@ -49,12 +54,29 @@ $.ajax({
 
             soccerDiv.append(p);
             soccerDiv.append(soccerImage);
+            // $("#buttons-view").append.soccerDiv;
 
             $("#soccer-gifs-appear-here").prepend(soccerDiv);
         }
-    });
+    
+    })
 })
-});
+
+
+        //render new buttons with user input
+    //    $("#add-soccer").on("click", function(event){
+
+    //     event.preventDefault();
+
+    //     var soccer = $("#soccer-input").val().trim();
+
+    //     soccer.push(soccer);
+
+    //     console.log(soccer);
+
+    //     renderButtons();
+    //    })
+})
 
 
 // 4. When the user clicks one of the still GIPHY images, the gif should animate. If the user clicks the gif again, it should stop playing.
