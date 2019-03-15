@@ -1,3 +1,16 @@
 body{
-    background: url(./soccer.jpg);
+    background: url(../images/soccer1.jpg);
+}
+
+.active{
+    display: none;
+}
+
+#buttons-view{
+    padding: 0 2%;
+    margin: 2%;
+}
+
+button{
+    padding: 0 2%;
 }

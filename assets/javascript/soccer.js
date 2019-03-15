@@ -4,27 +4,33 @@ $(document).ready(function(){
 //API key
  //hEzp6VLdrLsUVR0RNuEqLStvSJfuIJEL
 
-//  1. Before you can make any part of our site work, you need to create an array of strings, each one related to a topic that interests you. Save it to a variable called `topics`.
-//    * We chose animals for our theme, but you can make a list to your own liking.
-
-
-// 2. Your app should take the topics in this array and create buttons in your HTML.
-//    * Try using a loop that appends a button for each string in the array.
 
 var soccer = ["world cup", "ronaldinho", "messi", "cristiano ronaldo", "wayne rooney", "steven gerrard", "f.c. barcalona",
 "manchester united", "bicycle kick", "elastico"]
 
 
-// 3. When the user clicks on a button, the page should grab 10 static, non-animated gif images from the GIPHY API and place them on the page.
 
-$("button").on("click", function(){
+
+function renderButtons(){
+
+$("#buttons-view").empty();
+
+for (let i = 0; i < soccer.length; i++) {
+    var btn = $("<button>");
+    btn.addClass("soccer");
+    btn.attr("data-soccer", soccer[i]);
+    btn.text(soccer[i]);
+    $("#buttons-view").append(btn);
+}
+}
+
+renderButtons();
+
+$(document).on("click", "button", function(){
    
-    soccer = $(this).attr("data-soccer");
+    soccerData = $(this).attr("data-soccer");
 
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + soccer + "&api_key=hEzp6VLdrLsUVR0RNuEqLStvSJfuIJEL&limit=10";
-
-
-
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + soccerData + "&api_key=hEzp6VLdrLsUVR0RNuEqLStvSJfuIJEL&limit=10";
 
 $.ajax({
     url: queryURL,
@@ -42,7 +48,7 @@ $.ajax({
         var results = response.data;
 
         //Loops through arrays and appends rating and gif
-        for (var i = 0; i < soccer.length; i++) {
+        for (var i = 0; i < results.length; i++) {
 
             var soccerDiv = $("<div>");
 
@@ -50,11 +56,19 @@ $.ajax({
 
             var soccerImage = $("<img>");
 
-            soccerImage.attr("src", results[i].images.fixed_height.url);
+            soccerImage.attr("src", results[i].images.fixed_height_still.url);
+
+            soccerImage.addClass("still")
+
+            var soccerImage2 = $("<img>");
+
+            soccerImage2.attr("src", results[i].images.fixed_height.url);
+
+            soccerImage2.addClass("active")
 
             soccerDiv.append(p);
             soccerDiv.append(soccerImage);
-            // $("#buttons-view").append.soccerDiv;
+            soccerDiv.append(soccerImage2);
 
             $("#soccer-gifs-appear-here").prepend(soccerDiv);
         }
@@ -62,33 +76,30 @@ $.ajax({
     })
 })
 
+        //Add new tags after user types in soccer topic and clicks
+       $("#add-soccer").on("click", function(event){
 
-        //render new buttons with user input
-    //    $("#add-soccer").on("click", function(event){
+        event.preventDefault();
 
-    //     event.preventDefault();
+        var newSoccer = $("#soccer-input").val().trim();
+        soccer.push(newSoccer);
 
-    //     var soccer = $("#soccer-input").val().trim();
+        renderButtons();
 
-    //     soccer.push(soccer);
+       });
 
-    //     console.log(soccer);
+      $(document).on("click", ".still", function () {
+          $(this).siblings(".active").show();
+          $(this).hide();
+      })
 
-    //     renderButtons();
-    //    })
+      $(document).on("click", ".active", function () {
+        $(this).siblings(".still").show();
+        $(this).hide();
+        $(this).hide();
+    })
+
 })
 
-
-// 4. When the user clicks one of the still GIPHY images, the gif should animate. If the user clicks the gif again, it should stop playing.
-
-// 5. Under every gif, display its rating (PG, G, so on).
-//    * This data is provided by the GIPHY API.
-//    * Only once you get images displaying with button presses should you move on to the next step.
-
-// 6. Add a form to your page takes the value from a user input box and adds it into your `topics` array. Then make a function call that takes each topic in the array remakes the buttons on the page.
-
-// 7. Deploy your assignment to Github Pages.
-
-// 8. **Rejoice**! You just made something really cool
 
 
