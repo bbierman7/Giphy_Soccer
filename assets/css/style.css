@@ -1,5 +1,6 @@
 body{
     background: url(../images/soccer1.jpg);
+    width:100%;
 }
 
 .active{
@@ -9,8 +10,36 @@ body{
 #buttons-view{
     padding: 0 2%;
     margin: 2%;
+    border-spacing: 5em;
+    
 }
 
 button{
     padding: 0 2%;
+    margin: 10px;
 }
+
+h1{
+    font-weight: bold;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 15%;
+}
+
+p{
+    color: white;
+    font-size:2em;
+}
+
+.row{
+    width:100%;
+}
+
+#add-soccer{
+    margin-left:45%;
+}
+
+#soccer-input{
+    margin-left:44%;
+}
+

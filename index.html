@@ -4,31 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="./assets/css/style.css">
+
+
 
     <title>Soccer!</title>
 </head>
 
 <body>
+        <div class="row">
+            <h1>Click any soccer category to check out 10 GIFs for that topic!</h1>
+        </div>
+            
+                <!--Rendered buttons will be added here-->
+                <div class="row">
+                <div id="buttons-view"></div>
+                </div>
+            
+            <!--Form to type in soccer search topic-->
+            <div class="row">
+             <form id="soccer-form">    
+                <label for="soccer-input"></label>
+                <input type="text" id="soccer-input">
+                <br>
+            </div>
 
-        <h1>Click any soccer category to check out 10 GIFs for that topic!</h1>
-        <!--Rendered buttons will be added here-->
-        <div id="buttons-view"></div>
+            <div class="row">
+            <!--Click here for new soccer gifs to be added-->
+            <input id="add-soccer" type="submit" value="Add soccer category">
+            </form>
+
+            
+            <!--Place where gifs will be dumped-->
+            
+            <div class="rowGif" id="soccer-gifs-appear-here"></div>
+            </div>
         
-        <!--Form to type in soccer search topic-->
-        <form id="soccer-form">    
-            <label for="soccer-input"></label>
-            <input type="text" id="soccer-input">
-            <br>
-
-        <!--Click here for new soccer gifs to be added-->
-        <input id="add-soccer" type="submit" value="Add soccer category">
-        </form>
-
-
-        <!--Place where gifs will be dumped-->
-        <div id="soccer-gifs-appear-here"></div>
+        
+        
 
 
 

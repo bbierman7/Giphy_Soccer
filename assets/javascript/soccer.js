@@ -5,7 +5,7 @@ $(document).ready(function(){
  //hEzp6VLdrLsUVR0RNuEqLStvSJfuIJEL
 
 
-var soccer = ["world cup", "ronaldinho", "messi", "cristiano ronaldo", "wayne rooney", "steven gerrard", "f.c. barcalona",
+var soccer = ["world cup", "ronaldinho", "messi", "cristiano ronaldo", "wayne rooney", "steven gerrard", "f.c. barcelona",
 "manchester united", "bicycle kick", "elastico"]
 
 
