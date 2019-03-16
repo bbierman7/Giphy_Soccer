@@ -7,15 +7,20 @@ body{
     display: none;
 }
 
-#buttons-view{
+/* #buttons-view{
     padding: 0 2%;
     margin-left: 2%;
     border-spacing: 5em;
+} */
+
+.btn-block{
+    background-color: royalblue;
 }
 
 .soccer{
     padding: 0 2%;
     margin: 10px;
+    background-color: aquamarine;
 }
 
 h1{
@@ -31,14 +36,11 @@ p{
 }
 
 
-.btn{
+/* .btn{
     text-decoration-color: black;
     margin-left:5px;
-}
-/* .row{
-    width:100%;
-    float:left;
 } */
+
 
 #add-soccer{
     margin:17%;
