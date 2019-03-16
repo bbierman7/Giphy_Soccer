@@ -9,21 +9,20 @@ body{
 
 #buttons-view{
     padding: 0 2%;
-    margin: 2%;
+    margin-left: 2%;
     border-spacing: 5em;
-    
 }
 
-button{
+.soccer{
     padding: 0 2%;
     margin: 10px;
 }
 
 h1{
-    font-weight: bold;
+    /* font-weight: bold; */
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-left: 15%;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    margin-left: 5%;
 }
 
 p{
@@ -31,15 +30,39 @@ p{
     font-size:2em;
 }
 
-.row{
-    width:100%;
+
+.btn{
+    text-decoration-color: black;
+    margin-left:5px;
 }
+/* .row{
+    width:100%;
+    float:left;
+} */
 
 #add-soccer{
-    margin-left:45%;
+    margin:17%;
 }
 
 #soccer-input{
-    margin-left:44%;
+    margin-left:5%;
 }
 
+#soccer-gifs-appear-here{
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.columns{
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.gifContainer{
+    float:left;
+    /* width:33%; */
+    margin:1%;
+    flex-wrap: wrap;
+
+}
