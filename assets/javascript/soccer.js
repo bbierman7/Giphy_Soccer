@@ -21,7 +21,7 @@ for (let i = 0; i < soccer.length; i++) {
     btn.attr("data-soccer", soccer[i]);
     btn.text(soccer[i]);
     $("#buttons-view").append(btn);
-}
+    }
 }
 
 renderButtons();
